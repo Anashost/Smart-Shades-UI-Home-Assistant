@@ -1,5 +1,13 @@
 # Home Assistant shades custom smart cards
 
+## Requirements
+- [lovelace-mushroom](https://github.com/piitaya/lovelace-mushroom)
+- [lovelace-mushroom-themes](https://github.com/piitaya/lovelace-mushroom-themes)
+- [stack-in-card](https://github.com/custom-cards/stack-in-card)
+- [card-mod](https://github.com/thomasloven/lovelace-card-mod)
+
+## Cards
+
 <details>
   <summary>Shade card</summary>
   
@@ -232,3 +240,409 @@ card:
 
 ```
 </details>
+
+------------------------------------------------------------------
+
+<details>
+  <summary>Sun Based automation UI</summary>
+
+```yaml
+type: custom:stack-in-card
+mode: vertical
+keep:
+  outer_padding: false
+  margin: false
+  box_shadow: false
+  background: false
+cards:
+  - type: custom:mushroom-title-card
+    title: Sun Based
+    subtitle_tap_action:
+      action: none
+    title_tap_action:
+      action: none
+    subtitle: |-
+      automates shades to open at sunrise 🌅
+      and close at sunset 🌇 (with optional Offset)
+  - type: grid
+    square: false
+    cards:
+      - type: custom:mushroom-entity-card
+        entity: input_boolean.shade_toggle_sun
+        primary_info: name
+        layout: vertical
+        name: Activate
+        icon: mdi:power
+        secondary_info: state
+        double_tap_action:
+          action: none
+        hold_action:
+          action: none
+        tap_action:
+          action: toggle
+      - type: custom:mushroom-template-card
+        primary: >-
+          {{ ((as_timestamp(states('sensor.sun_next_rising')) + ((
+          states('input_number.offset_shade_open')|float ) * 3600)) |
+          timestamp_custom('%H:%M')) }}
+        secondary: Sunrise
+        icon: mdi:alarm-check
+        entity: input_boolean.on_state
+        layout: vertical
+        icon_color: amber
+        double_tap_action:
+          action: none
+        hold_action:
+          action: none
+        tap_action:
+          action: none
+      - type: custom:mushroom-template-card
+        primary: >-
+          {{ ((as_timestamp(states('sensor.sun_next_setting')) + ((
+          states('input_number.offset_shade_close')|float ) * 3600)) |
+          timestamp_custom('%H:%M')) }}
+        secondary: Sunset
+        icon: mdi:alarm-check
+        entity: input_boolean.on_state
+        layout: vertical
+        icon_color: indigo
+        double_tap_action:
+          action: none
+        hold_action:
+          action: none
+        tap_action:
+          action: none
+    columns: 3
+  - type: grid
+    square: false
+    cards:
+      - type: custom:mushroom-title-card
+        title: ""
+        subtitle_tap_action:
+          action: none
+        title_tap_action:
+          action: none
+      - type: custom:mushroom-number-card
+        entity: input_number.offset_shade_open
+        double_tap_action:
+          action: none
+        hold_action:
+          action: none
+        tap_action:
+          action: none
+        display_mode: buttons
+        primary_info: none
+        secondary_info: name
+        layout: vertical
+        icon_type: none
+        name: Offset
+      - type: custom:mushroom-number-card
+        entity: input_number.offset_shade_close
+        double_tap_action:
+          action: none
+        hold_action:
+          action: none
+        tap_action:
+          action: none
+        display_mode: buttons
+        primary_info: none
+        secondary_info: name
+        layout: vertical
+        icon_type: none
+        name: Offset
+    columns: 3
+
+
+```
+</details>
+
+
+
+
+<details>
+  <summary>Sun Based automation - Automation</summary>
+
+```yaml
+alias: Shade automation sun based
+description: ""
+triggers:
+  - value_template: >-
+      {{ ((as_timestamp(states('sensor.sun_next_setting')) + ((
+      states('input_number.offset_shade_close')|float ) * 3600)) |
+      timestamp_custom('%H:%M')) == states('sensor.time') }}
+    trigger: template
+    id: sunset
+  - value_template: >-
+      {{ ((as_timestamp(states('sensor.sun_next_rising')) + ((
+      states('input_number.offset_shade_open')|float ) * 3600)) |
+      timestamp_custom('%H:%M')) == states('sensor.time') }}
+    trigger: template
+    id: sunrise
+conditions: []
+actions:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id:
+              - sunset
+        sequence:
+          - data:
+              position: 0
+            target:
+              entity_id:
+                - cover.all_shades
+            action: cover.set_cover_position
+      - conditions:
+          - condition: trigger
+            id:
+              - sunrise
+        sequence:
+          - data:
+              position: 100
+            target:
+              entity_id: cover.all_shades
+            action: cover.set_cover_position
+mode: single
+
+```
+</details>
+
+------------------------------------------------------------------
+
+<details>
+  <summary>Time Based automation UI</summary>
+
+```yaml
+type: custom:stack-in-card
+mode: vertical
+keep:
+  outer_padding: false
+  margin: false
+  box_shadow: false
+  background: false
+cards:
+  - type: custom:mushroom-title-card
+    title: Time Based
+    subtitle_tap_action:
+      action: none
+    title_tap_action:
+      action: none
+    subtitle: automates shades to open and close according to a specific time.
+  - type: grid
+    square: false
+    cards:
+      - type: custom:mushroom-entity-card
+        entity: input_boolean.shade_toggle_time
+        primary_info: name
+        layout: vertical
+        name: Activate
+        icon: mdi:power
+        secondary_info: state
+        double_tap_action:
+          action: none
+        hold_action:
+          action: none
+        tap_action:
+          action: toggle
+      - type: custom:mushroom-entity-card
+        entity: input_datetime.pick_time_shade_open
+        name: Open time
+        primary_info: state
+        secondary_info: name
+        layout: vertical
+        icon: mdi:alarm-check
+        double_tap_action:
+          action: none
+        hold_action:
+          action: none
+        icon_color: amber
+        tap_action:
+          action: more-info
+      - type: custom:mushroom-entity-card
+        primary_info: state
+        secondary_info: name
+        layout: vertical
+        icon: mdi:alarm-check
+        double_tap_action:
+          action: none
+        hold_action:
+          action: none
+        icon_color: indigo
+        name: Close time
+        tap_action:
+          action: more-info
+        entity: input_datetime.pick_time_shade_close
+    columns: 3
+
+
+```
+</details>
+
+<details>
+  <summary>Time Based automation - Automation</summary>
+
+```yaml
+alias: Shade automation time based
+description: ""
+triggers:
+  - value_template: >-
+      {{ (strptime(states('input_datetime.pick_time_shade_open'),
+      '%H:%M:%S').strftime('%H:%M')) == states('sensor.time') }}
+    enabled: true
+    trigger: template
+    id: open
+  - value_template: >-
+      {{ (strptime(states('input_datetime.pick_time_shade_close'),
+      '%H:%M:%S').strftime('%H:%M')) == states('sensor.time') }}
+    enabled: true
+    trigger: template
+    id: close
+conditions:
+  - condition: numeric_state
+    entity_id: sensor.home_acc_wind
+    above: 0
+    below: 30
+    enabled: true
+actions:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id:
+              - open
+        sequence:
+          - data:
+              position: 100
+            target:
+              entity_id: cover.all_shades
+            action: cover.set_cover_position
+      - conditions:
+          - condition: trigger
+            id:
+              - close
+        sequence:
+          - data:
+              position: 100
+            target:
+              entity_id: cover.all_shades
+            action: cover.set_cover_position
+          - data:
+              position: 0
+            target:
+              entity_id:
+                - cover.all_shades
+            action: cover.set_cover_position
+mode: single
+
+```
+</details>
+
+
+------------------------------------------------------------------
+
+<details>
+  <summary>Shades toggle Between sun and time</summary>
+
+```yaml
+alias: Shades toggle Between sun and time
+description: ""
+triggers:
+  - trigger: state
+    entity_id:
+      - input_boolean.shade_toggle_sun
+    from: "off"
+    to: "on"
+    id: sun on
+  - trigger: state
+    entity_id:
+      - input_boolean.shade_toggle_sun
+    from: "on"
+    to: "off"
+    id: sun off
+  - trigger: state
+    entity_id:
+      - input_boolean.shade_toggle_time
+    from: "off"
+    to: "on"
+    id: time on
+  - trigger: state
+    entity_id:
+      - input_boolean.shade_toggle_time
+    from: "on"
+    to: "off"
+    id: time off
+conditions: []
+actions:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id:
+              - sun on
+        sequence:
+          - action: automation.turn_on
+            metadata: {}
+            data: {}
+            target:
+              entity_id:
+                - automation.shade_automation_sun_based
+          - action: automation.turn_off
+            metadata: {}
+            data: {}
+            target:
+              entity_id:
+                - automation.shade_automation_time_based
+          - action: input_boolean.turn_off
+            metadata: {}
+            data: {}
+            target:
+              entity_id: input_boolean.shade_toggle_time
+      - conditions:
+          - condition: trigger
+            id:
+              - sun off
+        sequence:
+          - action: automation.turn_off
+            metadata: {}
+            data: {}
+            target:
+              entity_id:
+                - automation.shade_automation_sun_based
+      - conditions:
+          - condition: trigger
+            id:
+              - time on
+        sequence:
+          - action: automation.turn_on
+            metadata: {}
+            data: {}
+            target:
+              entity_id:
+                - automation.shade_automation_time_based
+          - action: automation.turn_off
+            metadata: {}
+            data: {}
+            target:
+              entity_id:
+                - automation.shade_automation_sun_based
+          - action: input_boolean.turn_off
+            metadata: {}
+            data: {}
+            target:
+              entity_id:
+                - input_boolean.shade_toggle_sun
+      - conditions:
+          - condition: trigger
+            id:
+              - time off
+        sequence:
+          - action: automation.turn_off
+            metadata: {}
+            data: {}
+            target:
+              entity_id:
+                - automation.shade_automation_time_based
+mode: single
+
+```
+------------------------------------------------------------------
+
+
