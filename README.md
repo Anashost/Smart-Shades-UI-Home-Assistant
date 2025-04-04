@@ -7,8 +7,8 @@
 - [card-mod](https://github.com/thomasloven/lovelace-card-mod)
 
 #### Create those Helpers:
-- input_boolean.shade_toggle_sun
-- input_boolean.shade_toggle_time
+- Shade Toggle Sun `input_boolean.shade_toggle_sun`
+- Shade Toggle Time `input_boolean.shade_toggle_time`
 
 #### Add Home Assistant `Sun` integration from "Devices & Services"
 
