@@ -6,6 +6,12 @@
 - [stack-in-card](https://github.com/custom-cards/stack-in-card)
 - [card-mod](https://github.com/thomasloven/lovelace-card-mod)
 
+#### Create those Helpers:
+- input_boolean.shade_toggle_sun
+- input_boolean.shade_toggle_time
+
+#### Add Home Assistant `Sun` integration from "Devices & Services"
+
 ## Cards
 
 <details>
