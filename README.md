@@ -9,6 +9,15 @@
 #### Create those Helpers:
 - Shade Toggle Sun `input_boolean.shade_toggle_sun`
 - Shade Toggle Time `input_boolean.shade_toggle_time`
+- Offset shade open
+`input_number.offset_shade_open`
+- Offset shade close
+`input_number.offset_shade_close`
+- Pick time shade open
+`input_datetime.pick_time_shade_open`
+- Pick time shade close
+`input_datetime.pick_time_shade_close`
+- Always On State `input_boolean.always_on_state` (and set it to `on`)
 
 #### Add Home Assistant `Sun` integration from "Devices & Services"
 
