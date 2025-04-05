@@ -19,7 +19,9 @@
 `input_datetime.pick_time_shade_close`
 - Always On State `input_boolean.always_on_state` (and set it to `on`)
 
-#### Add Home Assistant `Sun` integration from "Devices & Services"
+#### Add those Home Assistant basic integrations from: "Devices & Services"
+- `Sun`
+- `Time`
 
 ## Cards
 
