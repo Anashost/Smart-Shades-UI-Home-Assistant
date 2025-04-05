@@ -23,7 +23,7 @@
 - `Sun`
 - `Time`
 
-## Cards
+## Cards & Automations
 
 <details>
   <summary>Shade card</summary>
