@@ -41,7 +41,7 @@ input_number:
 ## 4. Add those Home Assistant basic integrations from: "Devices & Services"
 *Settings > Devices & Services > +Add Integration*
 
-- `Sun`
+- `Sun` (installed by default)
 - `Time`
 
 ## 5. Cards & Automations
