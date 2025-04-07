@@ -22,6 +22,22 @@
 - Always On State `input_boolean.always_on_state` (and set it to `on`)
 - All shades `cover.all_shades` (to group all shades into one entity)
 
+## Create this custom helper:
+* this one you put in `Configuration.yaml`
+* Replace `livingroomshade_slider` and `Livingroomshade slider` with your entity.
+
+```
+input_number:
+  livingroomshade_slider:
+    name: "Livingroomshade Slider"
+    initial: 0
+    min: 0
+    max: 100
+    step: 1
+    unit_of_measurement: "% Percent Open"
+    mode: slider
+```
+
 ## Add those Home Assistant basic integrations from: "Devices & Services"
 *Settings > Devices & Services > +Add Integration*
 
@@ -305,7 +321,7 @@ columns: 5
 >
 >- either create individual automations for each shade.
 >
->- or group all your shades together using Helpers and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation.
+>- or group all your shades together using Helpers and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation. Don't forget to create a `slider custom helper` for the group (step #3).
 
 <details>
   <summary>Sun Based automation UI</summary>
