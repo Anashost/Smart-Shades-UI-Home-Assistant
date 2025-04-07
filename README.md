@@ -313,6 +313,7 @@ cards:
 columns: 5
 
 
+
 ```
 </details>
 
@@ -330,7 +331,7 @@ columns: 5
 >- or group all your shades together using Helpers and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation. Don't forget to create a `slider custom helper` for the group (step #3).
 
 <details>
-  <summary>Sun Based automation UI</summary>
+  <summary>Sun Based automation - UI/Card</summary>
 
 ```yaml
 type: custom:stack-in-card
@@ -402,12 +403,18 @@ cards:
   - type: grid
     square: false
     cards:
-      - type: custom:mushroom-title-card
-        title: ""
-        subtitle_tap_action:
+      - type: custom:mushroom-number-card
+        entity: input_number.livingroomshade_slider
+        double_tap_action:
           action: none
-        title_tap_action:
+        hold_action:
           action: none
+        tap_action:
+          action: none
+        display_mode: slider
+        icon_type: none
+        secondary_info: state
+        primary_info: none
       - type: custom:mushroom-number-card
         entity: input_number.offset_shade_open
         double_tap_action:
@@ -438,7 +445,6 @@ cards:
         name: Offset
     columns: 3
 
-
 ```
 </details>
 
@@ -450,20 +456,30 @@ alias: Shade automation sun based
 description: ""
 triggers:
   - value_template: >-
-      {{ ((as_timestamp(states('sensor.sun_next_setting')) + ((
-      states('input_number.offset_shade_close')|float ) * 3600)) |
-      timestamp_custom('%H:%M')) == states('sensor.time') }}
-    trigger: template
-    id: sunset
-  - value_template: >-
       {{ ((as_timestamp(states('sensor.sun_next_rising')) + ((
       states('input_number.offset_shade_open')|float ) * 3600)) |
       timestamp_custom('%H:%M')) == states('sensor.time') }}
     trigger: template
     id: sunrise
+  - value_template: >-
+      {{ ((as_timestamp(states('sensor.sun_next_setting')) + ((
+      states('input_number.offset_shade_close')|float ) * 3600)) |
+      timestamp_custom('%H:%M')) == states('sensor.time') }}
+    trigger: template
+    id: sunset
 conditions: []
 actions:
   - choose:
+      - conditions:
+          - condition: trigger
+            id:
+              - sunrise
+        sequence:
+          - target:
+              entity_id: cover.livingroomshade
+            data:
+              position: "{{ states('input_number.livingroomshade_slider') | int }}"
+            action: cover.set_cover_position
       - conditions:
           - condition: trigger
             id:
@@ -475,17 +491,8 @@ actions:
               entity_id:
                 - cover.livingroomshade
             action: cover.set_cover_position
-      - conditions:
-          - condition: trigger
-            id:
-              - sunrise
-        sequence:
-          - data:
-              position: 100
-            target:
-              entity_id: cover.livingroomshade
-            action: cover.set_cover_position
 mode: single
+
 
 ```
 </details>
@@ -504,7 +511,7 @@ mode: single
 >- or group all your shades together using Helpers and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation. Don't forget to create a `slider custom helper` for the group (step #3).
 
 <details>
-  <summary>Time Based automation UI</summary>
+  <summary>Time Based automation - UI/Card</summary>
   
 ```yaml
 type: custom:stack-in-card
@@ -567,7 +574,22 @@ cards:
           action: more-info
         entity: input_datetime.pick_time_shade_close
     columns: 3
-
+  - type: grid
+    square: false
+    cards:
+      - type: custom:mushroom-number-card
+        entity: input_number.livingroomshade_slider
+        double_tap_action:
+          action: none
+        hold_action:
+          action: none
+        tap_action:
+          action: none
+        display_mode: slider
+        icon_type: none
+        secondary_info: state
+        primary_info: none
+    columns: 2
 
 ```
 </details>
@@ -591,12 +613,7 @@ triggers:
     enabled: true
     trigger: template
     id: close
-conditions:
-  - condition: numeric_state
-    entity_id: sensor.home_acc_wind
-    above: 0
-    below: 30
-    enabled: true
+conditions: []
 actions:
   - choose:
       - conditions:
@@ -604,10 +621,10 @@ actions:
             id:
               - open
         sequence:
-          - data:
-              position: 100
-            target:
+          - target:
               entity_id: cover.livingroomshade
+            data:
+              position: "{{ states('input_number.livingroomshade_slider') | int }}"
             action: cover.set_cover_position
       - conditions:
           - condition: trigger
@@ -615,17 +632,13 @@ actions:
               - close
         sequence:
           - data:
-              position: 100
-            target:
-              entity_id: cover.livingroomshade
-            action: cover.set_cover_position
-          - data:
               position: 0
             target:
               entity_id:
                 - cover.livingroomshade
             action: cover.set_cover_position
 mode: single
+
 
 ```
 </details>
