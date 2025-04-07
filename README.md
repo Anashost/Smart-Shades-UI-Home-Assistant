@@ -205,69 +205,64 @@ cards:
   <summary>presets buttons </summary>
 
 ```yaml
-type: conditional
-conditions:
-  - condition: state
-    entity: input_boolean.shade_all_view
-    state: "on"
-card:
-  square: false
-  type: grid
-  cards:
-    - type: custom:mushroom-entity-card
-      entity: input_boolean.always_on_state
-      layout: vertical
-      primary_info: none
-      secondary_info: name
-      tap_action:
-        action: perform-action
-        target:
-          entity_id: cover.livingroomshade
-        perform_action: cover.set_cover_position
-        data:
-          position: 50
-      icon: mdi:roller-shade
-      icon_color: orange
-      name: All half open
-    - type: custom:mushroom-entity-card
-      entity: input_boolean.always_on_state
-      secondary_info: name
-      primary_info: none
-      double_tap_action:
-        action: none
-      hold_action:
-        action: none
-      tap_action:
-        action: call-service
-        service: cover.set_cover_position
-        target:
-          entity_id: cover.livingroomshade
-        data:
-          position: 100
-      layout: vertical
-      icon_color: green
-      icon: mdi:roller-shade-closed
-      name: All Open
-    - type: custom:mushroom-entity-card
-      entity: input_boolean.always_on_state
-      secondary_info: name
-      primary_info: none
-      double_tap_action:
-        action: none
-      hold_action:
-        action: none
-      tap_action:
-        action: call-service
-        service: cover.set_cover_position
-        target:
-          entity_id: cover.livingroomshade
-        data:
-          position: 0
-      layout: vertical
-      icon_color: red
-      icon: mdi:roller-shade
-      name: All Close
-  columns: 3
+type: grid
+square: false
+cards:
+  - type: custom:mushroom-entity-card
+    entity: input_boolean.always_on_state
+    layout: vertical
+    primary_info: none
+    secondary_info: name
+    tap_action:
+      action: perform-action
+      target:
+        entity_id: cover.livingroomshade
+      perform_action: cover.set_cover_position
+      data:
+        position: 50
+    icon: mdi:roller-shade
+    icon_color: orange
+    name: All half open
+  - type: custom:mushroom-entity-card
+    entity: input_boolean.always_on_state
+    secondary_info: name
+    primary_info: none
+    double_tap_action:
+      action: none
+    hold_action:
+      action: none
+    tap_action:
+      action: call-service
+      service: cover.set_cover_position
+      target:
+        entity_id: cover.livingroomshade
+      data:
+        position: 100
+    layout: vertical
+    icon_color: green
+    icon: mdi:roller-shade-closed
+    name: All Open
+  - type: custom:mushroom-entity-card
+    entity: input_boolean.always_on_state
+    secondary_info: name
+    primary_info: none
+    double_tap_action:
+      action: none
+    hold_action:
+      action: none
+    tap_action:
+      action: call-service
+      service: cover.set_cover_position
+      target:
+        entity_id: cover.livingroomshade
+      data:
+        position: 0
+    layout: vertical
+    icon_color: red
+    icon: mdi:roller-shade
+    name: All Close
+columns: 3
+
 
 ```
 </details>
