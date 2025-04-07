@@ -6,7 +6,9 @@
 - [stack-in-card](https://github.com/custom-cards/stack-in-card)
 - [card-mod](https://github.com/thomasloven/lovelace-card-mod)
 
-#### Create those Helpers:
+## Create those Helpers:
+*Settings > Devices & Services > Helpers*
+
 - Shade Toggle Sun `input_boolean.shade_toggle_sun`
 - Shade Toggle Time `input_boolean.shade_toggle_time`
 - Offset shade open
@@ -18,10 +20,17 @@
 - Pick time shade close
 `input_datetime.pick_time_shade_close`
 - Always On State `input_boolean.always_on_state` (and set it to `on`)
+- All shades `cover.all_shades` (to group all shades into one entity)
 
-#### Add those Home Assistant basic integrations from: "Devices & Services"
+## Add those Home Assistant basic integrations from: "Devices & Services"
+*Settings > Devices & Services > +Add Integration*
+
 - `Sun`
 - `Time`
+
+## Ussfull Notes:
+* replace `cover.livingroomshade` with your shade entity.
+* use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
 
 ## Cards & Automations
 
@@ -266,6 +275,13 @@ card:
 ------------------------------------------------------------------
 
 <img src="https://github.com/user-attachments/assets/e6f5a188-c086-4b47-96e3-d1dc15ecdc08" style="width: 50%; min-width: 150px; margin: 5px;" />
+
+### You can use this setup in two ways:
+
+- either create individual automations for each shade.
+
+- or group all your shades together using Helpers and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation.
+
 <details>
   <summary>Sun Based automation UI</summary>
 
