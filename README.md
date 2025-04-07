@@ -1,5 +1,11 @@
 # Home Assistant shades custom smart cards
 
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+  <img src="https://github.com/user-attachments/assets/e9c9bd85-a3b0-4a53-8e6a-b5575269a514" style="width: 30%; min-width: 150px; margin: 5px;" />
+  <img src="https://github.com/user-attachments/assets/e6f5a188-c086-4b47-96e3-d1dc15ecdc08" style="width: 30%; min-width: 150px; margin: 5px;" />
+  <img src="https://github.com/user-attachments/assets/d23053bb-6de9-46a6-9f40-0def4abc1089" style="width: 30%; min-width: 150px; margin: 5px;" />
+</div>
+
 ## Requirements
 - [lovelace-mushroom](https://github.com/piitaya/lovelace-mushroom)
 - [lovelace-mushroom-themes](https://github.com/piitaya/lovelace-mushroom-themes)
