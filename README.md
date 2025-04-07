@@ -1,12 +1,12 @@
 # Home Assistant shades custom smart cards
 
-## Requirements
+## 1. Requirements
 - [lovelace-mushroom](https://github.com/piitaya/lovelace-mushroom)
 - [lovelace-mushroom-themes](https://github.com/piitaya/lovelace-mushroom-themes)
 - [stack-in-card](https://github.com/custom-cards/stack-in-card)
 - [card-mod](https://github.com/thomasloven/lovelace-card-mod)
 
-## Create those Helpers:
+## 2. Create those Helpers:
 *Settings > Devices & Services > Helpers*
 
 - Shade Toggle Sun `input_boolean.shade_toggle_sun`
@@ -22,7 +22,7 @@
 - Always On State `input_boolean.always_on_state` (and set it to `on`)
 - All shades `cover.all_shades` (to group all shades into one entity)
 
-## Create this custom helper:
+## 3. Create this custom helper:
 * this one you put in `Configuration.yaml`
 * Replace `livingroomshade_slider` and `Livingroomshade slider` with your entity.
 
@@ -38,19 +38,19 @@ input_number:
     mode: slider
 ```
 
-## Add those Home Assistant basic integrations from: "Devices & Services"
+## 4. Add those Home Assistant basic integrations from: "Devices & Services"
 *Settings > Devices & Services > +Add Integration*
 
 - `Sun`
 - `Time`
 
-## Ussfull Notes:
+## 5. Cards & Automations
+
+<img src="https://github.com/user-attachments/assets/e9c9bd85-a3b0-4a53-8e6a-b5575269a514" style="width: 50%; min-width: 150px; margin: 5px;" />
+
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
 
-## Cards & Automations
-
-<img src="https://github.com/user-attachments/assets/e9c9bd85-a3b0-4a53-8e6a-b5575269a514" style="width: 50%; min-width: 150px; margin: 5px;" />
 <details>
   <summary>Shade card</summary>
   
@@ -217,6 +217,9 @@ cards:
 
 <img src="https://github.com/user-attachments/assets/e47d565c-8002-4307-ae69-b57d26612fda" style="width: 50%; min-width: 150px; margin: 5px;" />
 
+* replace `cover.livingroomshade` with your shade entity.
+* use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
+
 <details>
   <summary>presets buttons </summary>
 
@@ -316,6 +319,9 @@ columns: 5
 ------------------------------------------------------------------
 
 <img src="https://github.com/user-attachments/assets/e6f5a188-c086-4b47-96e3-d1dc15ecdc08" style="width: 50%; min-width: 150px; margin: 5px;" />
+
+* replace `cover.livingroomshade` with your shade entity.
+* use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
 
 >### You can use this setup in two ways:
 >
@@ -487,6 +493,9 @@ mode: single
 ------------------------------------------------------------------
 
 <img src="https://github.com/user-attachments/assets/d23053bb-6de9-46a6-9f40-0def4abc1089" style="width: 50%; min-width: 150px; margin: 5px;" />
+
+* replace `cover.livingroomshade` with your shade entity.
+* use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
 
 >### You can use this setup too in two ways:
 >
