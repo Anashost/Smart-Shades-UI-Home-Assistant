@@ -1,11 +1,5 @@
 # Home Assistant shades custom smart cards
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center;">
-  <img src="https://github.com/user-attachments/assets/e9c9bd85-a3b0-4a53-8e6a-b5575269a514" style="width: 30%; min-width: 150px; margin: 5px;" />
-  <img src="https://github.com/user-attachments/assets/e6f5a188-c086-4b47-96e3-d1dc15ecdc08" style="width: 30%; min-width: 150px; margin: 5px;" />
-  <img src="https://github.com/user-attachments/assets/d23053bb-6de9-46a6-9f40-0def4abc1089" style="width: 30%; min-width: 150px; margin: 5px;" />
-</div>
-
 ## Requirements
 - [lovelace-mushroom](https://github.com/piitaya/lovelace-mushroom)
 - [lovelace-mushroom-themes](https://github.com/piitaya/lovelace-mushroom-themes)
@@ -31,6 +25,7 @@
 
 ## Cards & Automations
 
+<img src="https://github.com/user-attachments/assets/e9c9bd85-a3b0-4a53-8e6a-b5575269a514" style="width: 50%; min-width: 150px; margin: 5px;" />
 <details>
   <summary>Shade card</summary>
   
@@ -193,6 +188,10 @@ cards:
 ```
 </details>
 
+------------------------------------------------------------------
+
+<img src="https://github.com/user-attachments/assets/e47d565c-8002-4307-ae69-b57d26612fda" style="width: 50%; min-width: 150px; margin: 5px;" />
+
 <details>
   <summary>presets buttons </summary>
 
@@ -214,7 +213,7 @@ card:
       tap_action:
         action: perform-action
         target:
-          entity_id: cover.all_shades
+          entity_id: cover.livingroomshade
         perform_action: cover.set_cover_position
         data:
           position: 50
@@ -233,7 +232,7 @@ card:
         action: call-service
         service: cover.set_cover_position
         target:
-          entity_id: cover.all_shades
+          entity_id: cover.livingroomshade
         data:
           position: 100
       layout: vertical
@@ -252,7 +251,7 @@ card:
         action: call-service
         service: cover.set_cover_position
         target:
-          entity_id: cover.all_shades
+          entity_id: cover.livingroomshade
         data:
           position: 0
       layout: vertical
@@ -266,6 +265,7 @@ card:
 
 ------------------------------------------------------------------
 
+<img src="https://github.com/user-attachments/assets/e6f5a188-c086-4b47-96e3-d1dc15ecdc08" style="width: 50%; min-width: 150px; margin: 5px;" />
 <details>
   <summary>Sun Based automation UI</summary>
 
@@ -379,9 +379,6 @@ cards:
 ```
 </details>
 
-
-
-
 <details>
   <summary>Sun Based automation - Automation</summary>
 
@@ -413,7 +410,7 @@ actions:
               position: 0
             target:
               entity_id:
-                - cover.all_shades
+                - cover.livingroomshade
             action: cover.set_cover_position
       - conditions:
           - condition: trigger
@@ -423,7 +420,7 @@ actions:
           - data:
               position: 100
             target:
-              entity_id: cover.all_shades
+              entity_id: cover.livingroomshade
             action: cover.set_cover_position
 mode: single
 
@@ -432,9 +429,11 @@ mode: single
 
 ------------------------------------------------------------------
 
+<img src="https://github.com/user-attachments/assets/d23053bb-6de9-46a6-9f40-0def4abc1089" style="width: 50%; min-width: 150px; margin: 5px;" />
+
 <details>
   <summary>Time Based automation UI</summary>
-
+  
 ```yaml
 type: custom:stack-in-card
 mode: vertical
@@ -536,7 +535,7 @@ actions:
           - data:
               position: 100
             target:
-              entity_id: cover.all_shades
+              entity_id: cover.livingroomshade
             action: cover.set_cover_position
       - conditions:
           - condition: trigger
@@ -546,13 +545,13 @@ actions:
           - data:
               position: 100
             target:
-              entity_id: cover.all_shades
+              entity_id: cover.livingroomshade
             action: cover.set_cover_position
           - data:
               position: 0
             target:
               entity_id:
-                - cover.all_shades
+                - cover.livingroomshade
             action: cover.set_cover_position
 mode: single
 
