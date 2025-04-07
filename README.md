@@ -276,11 +276,11 @@ card:
 
 <img src="https://github.com/user-attachments/assets/e6f5a188-c086-4b47-96e3-d1dc15ecdc08" style="width: 50%; min-width: 150px; margin: 5px;" />
 
-### You can use this setup in two ways:
-
-- either create individual automations for each shade.
-
-- or group all your shades together using Helpers and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation.
+>### You can use this setup in two ways:
+>
+>- either create individual automations for each shade.
+>
+>- or group all your shades together using Helpers and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation.
 
 <details>
   <summary>Sun Based automation UI</summary>
@@ -447,6 +447,12 @@ mode: single
 
 <img src="https://github.com/user-attachments/assets/d23053bb-6de9-46a6-9f40-0def4abc1089" style="width: 50%; min-width: 150px; margin: 5px;" />
 
+>### You can use this setup too in two ways:
+>
+>- either create individual UI & automation for each shade.
+>
+>- or group all your shades together using Helpers and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation.
+
 <details>
   <summary>Time Based automation UI</summary>
   
@@ -576,6 +582,7 @@ mode: single
 
 
 ------------------------------------------------------------------
+> This automation ensures that only one of the sun-based or time-based automations is active at a time. It switches between them to prevent both from running together.
 
 <details>
   <summary>Shades toggle Between sun and time</summary>
