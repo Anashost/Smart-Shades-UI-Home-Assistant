@@ -205,9 +205,39 @@ cards:
   <summary>presets buttons </summary>
 
 ```yaml
-type: grid
 square: false
+type: grid
 cards:
+  - type: custom:mushroom-entity-card
+    entity: input_boolean.always_on_state
+    layout: vertical
+    primary_info: none
+    secondary_info: name
+    tap_action:
+      action: perform-action
+      target:
+        entity_id: cover.livingroomshade
+      perform_action: cover.set_cover_position
+      data:
+        position: 30
+    icon: mdi:roller-shade
+    icon_color: teal
+    name: 30% open
+  - type: custom:mushroom-entity-card
+    entity: input_boolean.always_on_state
+    layout: vertical
+    primary_info: none
+    secondary_info: name
+    tap_action:
+      action: perform-action
+      target:
+        entity_id: cover.livingroomshade
+      perform_action: cover.set_cover_position
+      data:
+        position: 75
+    icon: mdi:roller-shade
+    icon_color: purple
+    name: 75% open
   - type: custom:mushroom-entity-card
     entity: input_boolean.always_on_state
     layout: vertical
@@ -222,7 +252,7 @@ cards:
         position: 50
     icon: mdi:roller-shade
     icon_color: orange
-    name: All half open
+    name: Half open
   - type: custom:mushroom-entity-card
     entity: input_boolean.always_on_state
     secondary_info: name
@@ -241,7 +271,7 @@ cards:
     layout: vertical
     icon_color: green
     icon: mdi:roller-shade-closed
-    name: All Open
+    name: Open
   - type: custom:mushroom-entity-card
     entity: input_boolean.always_on_state
     secondary_info: name
@@ -260,8 +290,8 @@ cards:
     layout: vertical
     icon_color: red
     icon: mdi:roller-shade
-    name: All Close
-columns: 3
+    name: Close
+columns: 5
 
 
 ```
