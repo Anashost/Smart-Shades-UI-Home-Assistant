@@ -215,7 +215,7 @@ card:
   type: grid
   cards:
     - type: custom:mushroom-entity-card
-      entity: automation.a_on_state
+      entity: input_boolean.always_on_state
       layout: vertical
       primary_info: none
       secondary_info: name
@@ -230,7 +230,7 @@ card:
       icon_color: orange
       name: All half open
     - type: custom:mushroom-entity-card
-      entity: automation.a_on_state
+      entity: input_boolean.always_on_state
       secondary_info: name
       primary_info: none
       double_tap_action:
@@ -249,7 +249,7 @@ card:
       icon: mdi:roller-shade-closed
       name: All Open
     - type: custom:mushroom-entity-card
-      entity: automation.a_on_state
+      entity: input_boolean.always_on_state
       secondary_info: name
       primary_info: none
       double_tap_action:
