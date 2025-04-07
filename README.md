@@ -501,7 +501,7 @@ mode: single
 >
 >- either create individual UI & automation for each shade.
 >
->- or group all your shades together using Helpers and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation.
+>- or group all your shades together using Helpers and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation. Don't forget to create a `slider custom helper` for the group (step #3).
 
 <details>
   <summary>Time Based automation UI</summary>
