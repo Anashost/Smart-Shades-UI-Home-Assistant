@@ -25,7 +25,7 @@
 - [stack-in-card](https://github.com/custom-cards/stack-in-card)
 - [card-mod](https://github.com/thomasloven/lovelace-card-mod)
 
-## 2. Create the Helpers
+## 2. Create those Helpers
 
 Navigate to **Settings > Devices & Services > Helpers**, then create the following:
 
