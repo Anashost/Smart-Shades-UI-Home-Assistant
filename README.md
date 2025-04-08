@@ -23,6 +23,9 @@
 - [stack-in-card](https://github.com/custom-cards/stack-in-card)
 - [card-mod](https://github.com/thomasloven/lovelace-card-mod)
 
+### Important Note:
+> If you intended to use the automation
+
 ## 2. Create those Helpers:
 *Settings > Devices & Services > Helpers*
 
@@ -343,9 +346,9 @@ columns: 5
 
 >### You can use this setup in two ways:
 >
->- either create individual automations for each shade.
+>- either create individual Ui & automations for each shade, to individually.
 >
->- or group all your shades together using Helpers and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation. Don't forget to create a `slider custom helper` for the group (step #3).
+>- or group all your shades together and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation. Don't forget to create a `slider custom helper` for the group (step #3).
 
 <details>
   <summary>Sun Based automation - UI/Card</summary>
