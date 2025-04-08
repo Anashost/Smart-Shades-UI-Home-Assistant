@@ -232,7 +232,7 @@ cards:
 
 ------------------------------------------------------------------
 
-<img src="https://github.com/user-attachments/assets/e47d565c-8002-4307-ae69-b57d26612fda" style="width: 50%; min-width: 150px; margin: 5px;" />
+<img src="https://github.com/user-attachments/assets/630cbbb7-01b9-4476-a33c-a486eeb9d14f" style="width: 50%; min-width: 150px; margin: 5px;" />
 
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
@@ -336,7 +336,7 @@ columns: 5
 
 ------------------------------------------------------------------
 
-<img src="https://github.com/user-attachments/assets/e6f5a188-c086-4b47-96e3-d1dc15ecdc08" style="width: 50%; min-width: 150px; margin: 5px;" />
+<img src="https://github.com/user-attachments/assets/7b4d0ad3-b97a-4c38-91a8-c5b7f1abc9f6" style="width: 50%; min-width: 150px; margin: 5px;" />
 
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
@@ -516,7 +516,7 @@ mode: single
 
 ------------------------------------------------------------------
 
-<img src="https://github.com/user-attachments/assets/d23053bb-6de9-46a6-9f40-0def4abc1089" style="width: 50%; min-width: 150px; margin: 5px;" />
+<img src="https://github.com/user-attachments/assets/25812216-fbf0-4c6c-95f8-35d149d6a8b9" style="width: 50%; min-width: 150px; margin: 5px;" />
 
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
