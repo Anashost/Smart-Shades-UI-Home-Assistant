@@ -98,6 +98,7 @@ input_number:
 
 <img src="https://github.com/user-attachments/assets/e9c9bd85-a3b0-4a53-8e6a-b5575269a514" style="width: 50%; min-width: 150px; margin: 5px;" />
 
+* + Add Card > Manual
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
 
@@ -267,6 +268,7 @@ cards:
 
 <img src="https://github.com/user-attachments/assets/630cbbb7-01b9-4476-a33c-a486eeb9d14f" style="width: 50%; min-width: 150px; margin: 5px;" />
 
+* + Add Card > Manual
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
 
@@ -371,6 +373,7 @@ columns: 5
 
 <img src="https://github.com/user-attachments/assets/7b4d0ad3-b97a-4c38-91a8-c5b7f1abc9f6" style="width: 50%; min-width: 150px; margin: 5px;" />
 
+* + Add Card > Manual
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
 
@@ -551,6 +554,7 @@ mode: single
 
 <img src="https://github.com/user-attachments/assets/25812216-fbf0-4c6c-95f8-35d149d6a8b9" style="width: 50%; min-width: 150px; margin: 5px;" />
 
+* + Add Card > Manual
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
 
