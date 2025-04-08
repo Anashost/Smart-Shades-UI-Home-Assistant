@@ -40,6 +40,8 @@
 - All shades `cover.all_shades` (to group all shades into one entity)
 
 ## 3. Create this custom helper:
+* We need this to function as a virtual slider, allowing us to set the target shade position dynamically in UI automations.
+
 * this one you put in `Configuration.yaml`
 * Replace `livingroomshade_slider` and `Livingroomshade slider` with the name you want.
 
@@ -343,7 +345,7 @@ columns: 5
 
 >### You can use this setup in two ways:
 >
->- either create individual Ui & automations for each shade, to individually.
+>- either create individual Ui & automations for each shade, to automate them individually.
 >
 >- or group all your shades together and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation. Don't forget to create a `slider custom helper` for the group (step #3).
 
@@ -523,7 +525,7 @@ mode: single
 
 >### You can use this setup too in two ways:
 >
->- either create individual UI & automation for each shade.
+>- either create individual UI & automation for each shade to automate them individually.
 >
 >- or group all your shades together using Helpers and automate them as one. then use this entity `cover.all_shades` we created earlier for the UI and Automation. Don't forget to create a `slider custom helper` for the group (step #3).
 
