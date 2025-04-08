@@ -350,7 +350,7 @@ columns: 5
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
 
->### You can use this setup in two ways:
+>#### You can use this setup in two ways:
 >
 >- either create individual Ui & automations for each shade, to automate them individually.
 >
@@ -530,7 +530,7 @@ mode: single
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
 
->### You can use this setup too in two ways:
+>#### You can use this setup too in two ways:
 >
 >- either create individual UI & automation for each shade to automate them individually.
 >
