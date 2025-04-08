@@ -98,7 +98,7 @@ input_number:
 
 <img src="https://github.com/user-attachments/assets/e9c9bd85-a3b0-4a53-8e6a-b5575269a514" style="width: 50%; min-width: 150px; margin: 5px;" />
 
-* + Add Card > Manual
+* In the view ⋮ > +Add Card > Manual | paste code.
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
 
@@ -268,7 +268,7 @@ cards:
 
 <img src="https://github.com/user-attachments/assets/630cbbb7-01b9-4476-a33c-a486eeb9d14f" style="width: 50%; min-width: 150px; margin: 5px;" />
 
-* + Add Card > Manual
+* In the view ⋮ > +Add Card > Manual | paste code.
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
 
@@ -373,9 +373,11 @@ columns: 5
 
 <img src="https://github.com/user-attachments/assets/7b4d0ad3-b97a-4c38-91a8-c5b7f1abc9f6" style="width: 50%; min-width: 150px; margin: 5px;" />
 
-* + Add Card > Manual
+* In the view ⋮ > +Add Card > Manual | paste code.
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
+* for the automation:
+  Settings > Automations & scenes > +Create New Automation > ⋮ > Edit in Yaml | paste code.
 
 >#### You can use this setup in two ways:
 >
@@ -554,10 +556,12 @@ mode: single
 
 <img src="https://github.com/user-attachments/assets/25812216-fbf0-4c6c-95f8-35d149d6a8b9" style="width: 50%; min-width: 150px; margin: 5px;" />
 
-* + Add Card > Manual
+* In the view ⋮ > +Add Card > Manual | paste code.
 * replace `cover.livingroomshade` with your shade entity.
 * use Find & Replace All feature `Ctrl+F ` to replace all entities at once.
-
+* for the automation:
+  Settings > Automations & scenes > +Create New Automation > ⋮ > Edit in Yaml | paste code.
+  
 >#### You can use this setup too in two ways:
 >
 >- either create individual UI & automation for each shade to automate them individually.
@@ -700,6 +704,8 @@ mode: single
 
 ------------------------------------------------------------------
 > This automation ensures that only one of the sun-based or time-based automations is active at a time. It switches between them to prevent both from running together.
+
+- Settings > Automations & scenes > +Create New Automation > ⋮ > Edit in Yaml | paste code.
 
 <details>
   <summary>Shades toggle Between sun and time</summary>
