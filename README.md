@@ -25,28 +25,49 @@
 - [stack-in-card](https://github.com/custom-cards/stack-in-card)
 - [card-mod](https://github.com/thomasloven/lovelace-card-mod)
 
-## 2. Create those Helpers:
-*Settings > Devices & Services > Helpers*
+## 2. Create the Helpers
 
-- Shade Toggle Sun `input_boolean.shade_toggle_sun`
+Navigate to **Settings > Devices & Services > Helpers**, then create the following:
 
-- Shade Toggle Time `input_boolean.shade_toggle_time`
+#### Toggle Helpers
+- Name: `Shade Toggle Sun`  
+  Type: Toggle  
+  Entity ID: `input_boolean.shade_toggle_sun`
 
-- Offset shade open
-`input_number.offset_shade_open`
+- Name: `Shade Toggle Time`  
+  Type: Toggle  
+  Entity ID: `input_boolean.shade_toggle_time`
 
-- Offset shade close
-`input_number.offset_shade_close`
+- Name: `Always On State`  
+  Type: Toggle  
+  Entity ID: `input_boolean.always_on_state` (and set it to `on`)
 
-- Pick time shade open
-`input_datetime.pick_time_shade_open`
+#### Number Helpers
+- Name: `Offset shade open`  
+  Type: Number  
+  Min value: `-12`  
+  Max value: `12`  
+  Entity ID: `input_number.offset_shade_open`
 
-- Pick time shade close
-`input_datetime.pick_time_shade_close`
+- Name: `Offset shade close`  
+  Type: Number  
+  Min value: `-12`  
+  Max value: `12`  
+  Entity ID: `input_number.offset_shade_close`
 
-- Always On State `input_boolean.always_on_state` (and set it to `on`)
+#### Time Helpers
+- Type: Time
+  Name: `Pick time shade open`
+  Entity ID: `input_datetime.pick_time_shade_open`
 
-- All shades `cover.all_shades` (to group all shades into one entity)
+- Type: Time
+  Name: `Pick time shade close`
+  Entity ID: `input_datetime.pick_time_shade_close`
+
+#### Group Helper (to group all shades into one entity)
+- Type: Cover Group
+  Entity ID: `cover.all_shades`
+  Members: Select all your shades
 
 ## 3. Create this custom helper:
 * We need this to function as a virtual slider, allowing us to set the target shade position dynamically in UI automations.
