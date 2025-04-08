@@ -92,7 +92,7 @@ input_number:
 *Settings > Devices & Services > +Add Integration*
 
 - `Sun` (pre-installed by default)
-- `Time`
+- `Time & Date` > `Time`
 
 ## 5. Cards & Automations
 
