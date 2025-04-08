@@ -18,6 +18,8 @@
 # Home Assistant shades custom smart cards
 
 ## 1. Requirements
+> install via HACS
+
 - [lovelace-mushroom](https://github.com/piitaya/lovelace-mushroom)
 - [lovelace-mushroom-themes](https://github.com/piitaya/lovelace-mushroom-themes) (use the theme in the view you're creating the cards in).
 - [stack-in-card](https://github.com/custom-cards/stack-in-card)
