@@ -19,7 +19,7 @@
 
 ## 1. Requirements
 - [lovelace-mushroom](https://github.com/piitaya/lovelace-mushroom)
-- [lovelace-mushroom-themes](https://github.com/piitaya/lovelace-mushroom-themes)
+- [lovelace-mushroom-themes](https://github.com/piitaya/lovelace-mushroom-themes) (use the theme in the view you're creating the cards in).
 - [stack-in-card](https://github.com/custom-cards/stack-in-card)
 - [card-mod](https://github.com/thomasloven/lovelace-card-mod)
 
