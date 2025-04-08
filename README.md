@@ -23,9 +23,6 @@
 - [stack-in-card](https://github.com/custom-cards/stack-in-card)
 - [card-mod](https://github.com/thomasloven/lovelace-card-mod)
 
-### Important Note:
-> If you intended to use the automation
-
 ## 2. Create those Helpers:
 *Settings > Devices & Services > Helpers*
 
