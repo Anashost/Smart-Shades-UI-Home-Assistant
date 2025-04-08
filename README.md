@@ -56,16 +56,17 @@ Navigate to **Settings > Devices & Services > Helpers**, then create the followi
   Entity ID: `input_number.offset_shade_close`
 
 #### Time Helpers
-- Type: Time
-  Name: `Pick time shade open`
+- Name: `Pick time shade open`  
+  Type: Time  
   Entity ID: `input_datetime.pick_time_shade_open`
-
-- Type: Time
-  Name: `Pick time shade close`
+  
+- Name: `Pick time shade close`  
+  Type: Time  
   Entity ID: `input_datetime.pick_time_shade_close`
-
+  
 #### Group Helper (to group all shades into one entity)
-- Type: Cover Group
+- Name: `All Shades`  
+  Type: Time  
   Entity ID: `cover.all_shades`
   Members: Select all your shades
 
