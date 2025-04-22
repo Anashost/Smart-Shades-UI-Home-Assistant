@@ -264,6 +264,169 @@ cards:
 ```
 </details>
 
+<details>
+  <summary>Shade card (inverted controls)</summary>
+  
+```yaml
+type: custom:stack-in-card
+mode: vertical
+keep:
+  outer_padding: false
+  margin: false
+  box_shadow: false
+  background: false
+cards:
+  - type: custom:mushroom-template-card
+    card_mod:
+      style:
+        mushroom-state-info$: |
+          .secondary {
+            opacity: 0.80 !important;
+            background: rgba(114, 114, 114, 0.3);
+            color: white;
+            border-radius: 50px;
+            margin-left: 100px;
+            padding: 10px 15px 10px 15px;
+            position: absolute;
+            top: 10px;
+            right: 10px
+          }
+        mushroom-shape-icon$: ""
+        .: |
+          mushroom-shape-icon {
+            --icon-size: 65px;
+            display: flex;
+            margin: -22px 0px 0px -22px !important;
+          }
+          ha-card {
+            clip-path: inset(0 0 0 0 round var(--ha-card-border-radius, 12px));
+          }
+    primary: Livingroom Shade
+    secondary: >-
+      {% if state_attr('cover.livingroomshade', 'current_position') is not none
+      %}
+        {{ state_attr('cover.livingroomshade', 'current_position') }}% • 
+      {% endif %} {{states('cover.livingroomshade')|title }}
+    icon: mdi:awning-outline
+    icon_color: |-
+      {% if is_state('cover.livingroomshade','closed') %}
+        grey
+      {% else %}
+        blue
+      {% endif %}
+    entity: cover.livingroomshade
+    double_tap_action:
+      action: none
+    hold_action:
+      action: none
+    tap_action:
+      action: none
+    layout: horizontal
+  - type: horizontal-stack
+    cards:
+      - type: custom:mushroom-template-card
+        card_mod:
+          style: |
+            ha-card {
+            --spacing: 0.5em;
+            }
+        layout: vertical
+        primary: ""
+        secondary: ""
+        icon: mdi:arrow-down
+        entity: input_boolean.always_on_state
+        icon_color: |-
+          {% if is_state('cover.livingroomshade','closed')%}
+          grey            
+          {% else %}
+          green
+          {% endif %}
+        double_tap_action:
+          action: none
+        hold_action:
+          action: none
+        tap_action:
+          action: call-service
+          service: cover.close_cover
+          target:
+            entity_id: cover.livingroomshade
+          data: {}
+      - type: custom:mushroom-template-card
+        card_mod:
+          style: |
+            ha-card {
+            --spacing: 0.5em;
+            }
+        layout: vertical
+        primary: ""
+        secondary: ""
+        icon: mdi:pause
+        entity: input_boolean.always_on_state
+        icon_color: |-
+          {% if is_state('cover.livingroomshade','opening')%}
+          red 
+          {% elif is_state('cover.livingroomshade','closing')%}
+          red 
+          {% else %}
+          grey
+          {% endif %}  
+        double_tap_action:
+          action: none
+        hold_action:
+          action: none
+        tap_action:
+          action: call-service
+          service: cover.stop_cover
+          target:
+            entity_id: cover.livingroomshade
+          data: {}
+      - type: custom:mushroom-template-card
+        card_mod:
+          style: |
+            ha-card {
+            --spacing: 0.5em;
+            }
+        layout: vertical
+        primary: ""
+        secondary: ""
+        icon: mdi:arrow-up
+        entity: input_boolean.always_on_state
+        icon_color: >-
+          {% if state_attr('cover.livingroomshade', 'current_position') | int ==
+          100 %}
+              grey
+          {% else %}
+              green
+          {% endif %}
+        double_tap_action:
+          action: none
+        hold_action:
+          action: none
+        tap_action:
+          action: call-service
+          service: cover.open_cover
+          target:
+            entity_id: cover.livingroomshade
+          data: {}
+  - type: custom:mushroom-cover-card
+    entity: cover.livingroomshade
+    secondary_info: none
+    primary_info: none
+    show_position_control: true
+    show_tilt_position_control: false
+    show_buttons_control: false
+    double_tap_action:
+      action: none
+    hold_action:
+      action: none
+    tap_action:
+      action: none
+    fill_container: false
+    icon_type: none
+
+```
+</details>
+
 ------------------------------------------------------------------
 
 <img src="https://github.com/user-attachments/assets/630cbbb7-01b9-4476-a33c-a486eeb9d14f" style="width: 50%; min-width: 150px; margin: 5px;" />
