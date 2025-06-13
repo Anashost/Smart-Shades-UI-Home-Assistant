@@ -66,7 +66,7 @@ Navigate to **Settings > Devices & Services > Helpers**, then create the followi
   
 #### Group Helper (to group all shades into one entity)
 - Name: `All Shades`  
-  Type: Time  
+  Type: Group > Cover  
   Entity ID: `cover.all_shades`
   Members: Select all your shades
 
