@@ -80,11 +80,10 @@ Navigate to **Settings > Devices & Services > Helpers**, then create the followi
 input_number:
   livingroomshade_slider:
     name: "Livingroomshade Slider"
-    initial: 0
     min: 0
     max: 100
     step: 1
-    unit_of_measurement: "% Percent Open"
+    unit_of_measurement: "% Open"
     mode: slider
 ```
 
